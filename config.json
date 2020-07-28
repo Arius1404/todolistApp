@@ -1,16 +1,26 @@
+{
+	"listeners": {
+		"*:8888": {
+			"pass": "applications/todolist"
+		}
+	},
 
-    {
-        "type": "php",
-        "processes": {
-                "max": 50,
-                "spare": 50
-            },
-        "root": "/var/www/todolist/public",
-        "user": "arius",
-    	"group": "www-data",
-        "index": "index.php",
-        "script": "index.php",
-        "options": {
-                "file": "/etc/php/7.4/cli/php.ini"
-        	}
-    }
+	"applications": {
+		"todolist": {
+			"type": "php",
+			"processes": {
+				"max": 50,
+				"spare": 50
+			},
+
+			"root": "/var/www/todolist/public",
+			"user": "arius",
+			"group": "www-data",
+			"index": "index.php",
+			"script": "index.php",
+			"options": {
+				"file": "/etc/php/7.4/cli/php.ini"
+			}
+		}
+	}
+}
